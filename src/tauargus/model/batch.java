@@ -537,7 +537,8 @@ public class batch {
         token = nextChar(tail);
 
         if (token.equals(",")) {
-          fileName = StrUtils.unQuote(tail[0]);
+          fileName = tail[0].trim();
+          fileName = StrUtils.unQuote(fileName);
         }
         else
          { throw new ArgusException ("Illegal character " + token +" found. comma expected)");}
